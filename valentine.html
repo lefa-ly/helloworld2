@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Animation</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff4b5c, #ff758c, #ff9aa2, #ffb6c1);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transform: rotate(-45deg);
+            animation: heartbeat 1.5s infinite alternate;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 50px;
+            top: 0;
+        }
+
+        @keyframes heartbeat {
+            from { transform: scale(1) rotate(-45deg); }
+            to { transform: scale(1.1) rotate(-45deg); }
+        }
+
+        .flowers {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .flower {
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+            border-radius: 50%;
+            position: relative;
+            animation: floatFlowers 4s infinite alternate ease-in-out;
+        }
+
+        .flower:before, .flower:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: pink;
+            border-radius: 50%;
+        }
+
+        .flower:before {
+            top: -10px;
+            left: -10px;
+        }
+
+        .flower:after {
+            top: -10px;
+            right: -10px;
+        }
+
+        @keyframes floatFlowers {
+            from { transform: translateY(0); }
+            to { transform: translateY(-30px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <div class="flowers">
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+    </div>
+</body>
+</html>
